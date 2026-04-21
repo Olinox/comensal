@@ -1,8 +1,8 @@
 {
-  "name": "comensales-x-force",
+  "name": "comensales",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "serve dist"
   },
   "devDependencies": {
