@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión de Comensales - HTML Plano</title>
+</head>
+<body>
+  <section id="body">
+    <h2>Gestión de Comedor (HTML Plano)</h2>
+    <button id="body_btNuevoComensal">Nuevo Comensal</button>
+    <hr>
+    <div><b>Monto Total:</b> $<span id="body_lblMontoTotal">0.00</span></div>
+    <div><b>% Con Descuento:</b> <span id="body_lblPorcDescuento">0.00</span>%</div>
+    <br>
+    <div><b>Porcentajes por Turno:</b></div>
+    <ul>
+      <li>Desayuno: <span id="body_lblPorcDesayuno">0.00</span>%</li>
+      <li>Almuerzo: <span id="body_lblPorcAlmuerzo">0.00</span>%</li>
+      <li>Ambos: <span id="body_lblPorcAmbos">0.00</span>%</li>
+    </ul>
+  </section>
+
+  <section id="comensal" hidden style="margin-top: 20px; border: 1px solid #000; padding: 15px; width: 350px;">
+    <h3>Datos del Comensal</h3>
+    <div>Nombre: <input type="text" id="comensal_inNombre"></div>
+    <div>Apellido: <input type="text" id="comensal_inApellido"></div>
+    <div>Cédula: <input type="text" id="comensal_inCedula"></div>
+    <div>Sexo: 
+      <select id="comensal_inSexo">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+    </div>
+    <div>Fecha Nac: <input type="date" id="comensal_inFechaNac"></div>
+    <div>Turno: 
+      <select id="comensal_inTurno">
+        <option value="1">Desayuno</option>
+        <option value="2">Almuerzo</option>
+        <option value="3">Ambos</option>
+      </select>
+    </div>
+    <br>
+    <button id="comensal_btCancelar">Cancelar</button>
+    <button id="comensal_btAceptar">Aceptar</button>
+  </section>
+
+  <script type="module">
+    import Cl_cComedor from "./dist/controllers/Cl_cComedor.js";
+    import Cl_cComensal from "./dist/controllers/Cl_cComensal.js";
+    import Cl_vComedorPlain from "./dist/views/Cl_vComedorPlain.js";
+    import Cl_vComensalPlain from "./dist/views/Cl_vComensalPlain.js";
+
+    // Inicialización del MVC
+    const vistaComensal = new Cl_vComensalPlain();
+    const controladorComensal = new Cl_cComensal(vistaComensal);
+    const vistaComedor = new Cl_vComedorPlain();
+    new Cl_cComedor(vistaComedor, controladorComensal);
+  </script>
+</body>
+</html>
