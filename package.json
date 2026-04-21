@@ -2,8 +2,7 @@
   "name": "comensales",
   "version": "1.0.0",
   "scripts": {
-    "vercel-build": "tsc",
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "serve dist"
   },
   "devDependencies": {
